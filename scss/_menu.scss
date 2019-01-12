@@ -1,0 +1,204 @@
+// main: alux.scss
+/* Header */
+.nav-header{float:left;margin:0;}
+.logo{float:left;padding:15px 15px 0 $gutter / 2 ;font-weight: bold; font-size: 25px}
+
+/* Menu */
+.no-pad-menu { padding: 0; margin-bottom: 0; background: transparent!important}
+
+.nav-wrap { display: inline-block; width: 100%;  background: $menu-color; float:left; }
+.nav-wrap a { text-decoration: none; color: $menu-text-color; display: block; }
+.nav-wrap ul { list-style: none; position: relative; text-align: left; margin: 0; }
+.nav-wrap li { float: left; margin: 0; position: relative; }
+
+
+/* clear'n floats */
+.nav-wrap ul:after { clear: both; }
+.nav-wrap ul:before,
+.nav-wrap ul:after { content: ' '; display: table; }
+.nav-wrap nav { position: relative; text-align: center; float: right; }
+
+/* Animate Dropdown Mobile  */
+ul.primary, ul.dropdown-menu {
+  -webkit-transition: max-height 0.3s;
+     -moz-transition: max-height 0.3s;
+          transition: max-height 0.3s;
+}
+ul.primary li a { display: block; padding: 22px 30px;}
+ul.primary li a:hover { color: $menu-text-color-hover; }
+
+/* subs */
+ul.dropdown-menu {
+  position: absolute; z-index: 200; min-width: 200px; display: none;
+  box-shadow: 0 7px 12px rgba(0,0,0,.175);
+}
+ul.dropdown-menu li { float: none; margin: 0; }
+
+/* arrow animation menu */
+
+.alux-arrow {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  top: 27px;
+  right: 18px;
+  position: absolute;
+  background: url(arrow.svg) center center;
+  background-size: 22px 22px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.select .alux-arrow {
+  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+          transform: rotate(90deg);
+}
+
+/* dropdown link color */
+ul.primary ul.dropdown-menu li a {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
+  color: $dropdown-text-color;
+  padding: 13px 20px;
+}
+ul.primary ul.dropdown-menu li a:hover { color: $dropdown-text-color-hover; background: $dropdown-bg-color-hover; }
+
+/* dropdown display */
+ul.primary li:hover ul { display: block; }
+
+/* keeps the tab background white */
+ul.primary li:hover a { background: $dropdown-bg-color; color: #666; }
+ul.primary li:hover > a { color: #000; }
+
+/* Desktop */
+@media (min-width: $media-desktop) {
+
+	.alux-arrow {
+		top: 28px;
+		right: 6px;
+    background-size: 18px 18px;
+	}
+
+}
+
+/* Smartphone */
+@media (max-width: $media-smartphone) {
+
+  .logo{padding-left: $gutter-mobile;}
+
+  /* Header  */
+  .nav-header,
+  .nav-wrap nav{ width: 100%;}
+
+  /* Menu */
+  .nav-wrap {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .nav-wrap li {
+    float: none;
+  }
+  .nav-wrap .primary {
+    /* Initially we don't want any height, and we want the contents to be hidden */
+    max-height: 0;
+    overflow: hidden;
+  }
+  .nav-wrap .dropdown-menu {
+    /* Initially we don't want any height, and we want the contents to be hidden */
+    max-height: 0;
+    overflow: hidden;
+  }
+
+/* Hanburger with animations */
+.tog {
+    background: transparent;
+    width: 69px;
+    height: 69px;
+    position: relative;
+    float:right;
+  }
+  .tog span {
+    display: block;
+    width: 36px;
+    height: 3px;
+    border-radius: 2px;
+    position: absolute;
+    top: 32px;
+    right: 16px;
+    background: #fff;
+  }
+  .tog span:first-child {
+    -webkit-transform: translateY(-11px);
+            transform: translateY(-11px);
+  }
+  .tog  span.span-middle {
+    -webkit-transform: translateY(11px);
+            transform: translateY(11px);
+  }
+  .tog.x span:first-child {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .tog.x span.span-middle {
+    opacity: 0;
+  }
+  .tog.x span:last-child, .tog.x span.span-middle {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+
+  /* menu mobile height */
+  .nav-wrap .primary.open,
+  .nav-wrap .dropdown-menu.open {
+    max-height: 500px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-wrap .dropdown-menu.open{
+    max-height: 999px;
+  }
+
+  ul.primary li a {padding: 20px;}
+
+  .nav-wrap ul.primary li:hover a {
+    background: none;
+    color: $menu-mobile-text-color-hover;
+  }
+  .nav-wrap ul.primary li a.select {
+    background: darken($menu-color, 5%);
+    color: $menu-mobile-text-color-select;
+  }
+
+  .nav-wrap ul.primary li:hover ul {
+    display: block;
+    color: $menu-mobile-text-color-select;
+  }
+
+  .nav-wrap ul.dropdown-menu {
+    display: block;
+    position: static;
+    box-shadow: none;
+    width: 100%;
+    border-bottom: none;
+  }
+
+  .nav-wrap ul.primary ul.dropdown-menu li a {
+    background: darken($menu-color, 10%);
+    border: none;
+    color: $menu-mobile-text-color-hover;
+  }
+
+  .nav-wrap ul.primary ul.dropdown-menu li a:hover {
+    color: #ccc;
+  }
+
+  .alux-arrow {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  .no-pad-menu { padding: 0;}
+
+}

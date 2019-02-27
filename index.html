@@ -47,6 +47,36 @@
 	border-width: 33px;
 	margin-left: -33px;
 }
+	
+	.arrow_box2 {
+	position: relative;
+	background: url("https://raw.githubusercontent.com/mentorpaytren/cara-membuat-landing-page-paytren/master/img/background.png");
+	border: 2px solid #007bff;
+}
+.arrow_box2:after, .arrow_box2:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box2:after {
+	border-color: rgba(0, 123, 255, 0);
+	border-bottom-color: #007bff;
+	border-width: 30px;
+	margin-left: -30px;
+}
+.arrow_box2:before {
+	border-color: rgba(0, 123, 255, 0);
+	border-bottom-color: #007bff;
+	border-width: 33px;
+	margin-left: -33px;
+}
+	
 .imgbox {
         display: grid;
         height: 50%;
@@ -377,8 +407,19 @@
     </div>
     
   </section>
+	
+  <div class="arrow_box2" style="padding: 10px;">
+    <p></p>
+    <h5 class="text-center" style="color:white;">
+       Ya, hanya dengan melakukan cara kerja diatas secara konsisten, bisa mengantarkan Anda jadi Jutawan dalam hitungan bulan
+    </h5>
+	  <h5 class="text-center" style="color:orange;">BAGAIMANA BISA?</h5>
+	  <a class="button" href="#b2">Lanjutkan membaca</a>
+  </div>
+	<p></p>
+	<br/>
 
-  <div class="cover">
+  <div class="cover" id="b2">
     <section class="grid">
       <div class="col-40 sma-50">
         <h2 class="huge">Page Message</h2>

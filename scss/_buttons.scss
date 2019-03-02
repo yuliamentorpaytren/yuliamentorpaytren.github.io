@@ -4,7 +4,8 @@
 .button {
   font-size: 14px;
   color: #fff;
-  background: #f5a06e($call-color , 10%);
+  background: darken($call-color , 10%);
+  background-color: #f5a06e;
   text-transform: uppercase;
   font-weight: bold;
   border: none;

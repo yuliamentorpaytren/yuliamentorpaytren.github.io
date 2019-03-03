@@ -8,7 +8,8 @@
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  
 <style>
   .nav-header img {
   float: left;
@@ -94,14 +95,6 @@
 }
 .button:hover {
 	background-color: #f5a06e;
-}
-	
-	#myDIV {
-    width: 100%;
-    padding: 50px 0;
-    text-align: center;
-    background-color: lightblue;
-    margin-top:20px;
 }
 	
 </style>
@@ -776,11 +769,21 @@
 	<p></p>
 	<br/>
 	
-	<button onclick="myFunction()">Try it</button>
-
-<div id="myDIV">
-This is my DIV element.
+	
+<div class="container">
+  <h2>Custom Collapsible</h2>
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Klik Disini</button>
+  <div id="demo" class="collapse">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </div>
 </div>
+
+</body>
+</html>
+
+	
 
 <!--
   <section class="grid text-center">
@@ -810,18 +813,10 @@ This is my DIV element.
     </div>
   </section>
 -->
-	
-	<script>
-function myFunction() {
-    var x = document.getElementById('myDIV');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-}
-</script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	
 <script src="js/alux.min.js"></script>
 
 <script>
